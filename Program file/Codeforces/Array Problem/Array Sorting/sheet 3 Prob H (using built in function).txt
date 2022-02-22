@@ -1,0 +1,101 @@
+H. Sorting
+
+Given a number N and an array A of N numbers. Print the numbers after sorting them.
+
+Note:
+
+    Don't use built-in-functions.
+    try to solve it with bubble sort algorithm or Selection Sort.
+    for more information watch : https://www.youtube.com/watch?v=EnodMqJuQEo. 
+
+Input
+
+First line contains a number N (0 < N < 103) number of elements.
+
+Second line contains N numbers ( - 100 ≤ Ai ≤ 100).
+Output
+
+Print the numbers after sorting them.
+Examples
+
+Input
+3
+3 1 2
+
+Output
+1 2 3 
+
+Input
+4
+5 2 7 3
+
+Output
+2 3 5 7 
+
+
+
+
+
+
+
+//////////////////////////////////////////////code (using buit in function) /////////////////////////////////
+
+
+// for minimum to maximum
+// 3 2 1 input, 1 2 3 output
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+     long long int n,i;
+     cin>>n;
+
+     int arr[n];
+
+     for(i=0;i<n;i++)
+     {
+         cin>>arr[i];
+     }
+     
+     sort(arr,arr+n);
+
+     for(i=0;i<n;i++)
+     {
+         cout<<arr[i]<<" ";
+     }
+     cout<<endl;
+    return 0;
+}
+
+
+
+
+// from maximum to minimum
+// 1 2 3 input, 3 2 1 output
+
+/*
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+     long long int n,i;
+     cin>>n;
+
+     int arr[n];
+
+     for(i=0;i<n;i++)
+     {
+         cin>>arr[i];
+     }
+     
+     sort(arr,arr+n,greater<int >());
+
+     for(i=0;i<n;i++)
+     {
+         cout<<arr[i]<<" ";
+     }
+     cout<<endl;
+    return 0;
+}
+*/
