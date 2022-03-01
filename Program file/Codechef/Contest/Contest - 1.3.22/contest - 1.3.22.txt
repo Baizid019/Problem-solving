@@ -1,0 +1,434 @@
+// contest 1/3/2022
+Attemted 4
+Accepted 4
+
+
+
+                                                                            A)Battery Low 
+
+
+
+
+
+
+
+Chef's phone shows a Battery Low notification if the battery level is 15%
+
+or less.
+
+Given that the battery level of Chef's phone is X%
+
+, determine whether it would show a Battery low notification.
+Input Format
+
+    First line will contain T
+
+, number of test cases. Then the test cases follow.
+Each test case contains a single line of input, an integer X
+
+    , denoting the battery level of the phone.
+
+Output Format
+
+For each test case, output in a single line Yes
+, if the battery level is 15% or below. Otherwise, print No
+
+.
+
+You may print each character of Yes
+and No in uppercase or lowercase (for example, YeS, YES, yes
+
+will be considered identical).
+Constraints
+
+    1≤T≤100
+
+1≤X≤100
+
+Subtasks
+
+Subtask #1 (100 points): original constraints
+Sample Input 1
+
+3
+15
+3
+65
+
+Sample Output 1
+
+Yes
+Yes
+No
+
+Explanation
+
+Test Case 1: The battery level is 15
+
+. Thus, it would show a battery low notification.
+
+Test Case 2: The battery level is 3
+, which is less than 15
+
+. Thus, it would show a battery low notification.
+
+Test Case 3: The battery level is 65
+, which is greater than 15. Thus, it would not show a battery low notification
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////// code ////////////////////////////////////////////////////////////////////////////////////
+
+
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    int main()
+    {
+      long long int n,x,i;
+      cin>>n;
+      for(i=1;i<=n;i++)
+      {
+          cin>>x;
+          if(x<=15)
+          cout<<"Yes"<<endl;
+          else
+          cout<<"No"<<endl;
+      }
+
+       return 0;
+    }
+
+
+
+
+
+
+
+
+
+                                                                              B) Chessboard Distance
+
+
+
+
+The Chessboard Distance for any two points (X1,Y1) and (X2,Y2) on a Cartesian plane is defined as max(|X1−X2|,|Y1−Y2|)
+
+.
+
+You are given two points (X1,Y1)
+and (X2,Y2)
+
+. Output their Chessboard Distance.
+
+Note that, |P|
+denotes the absolute value of integer P. For example, |−4|=4 and |7|=7
+
+.
+Input Format
+
+    First line will contain T
+
+, the number of test cases. Then the test cases follow.
+Each test case consists of a single line of input containing 4
+space separated integers - X1,Y1,X2,Y2
+
+    - as defined in the problem statement.
+
+Output Format
+
+For each test case, output in a single line the chessboard distance between (X1,Y1)
+and (X2,Y2)
+
+Constraints
+
+    1≤T≤1000
+
+1≤X1,Y1,X2,Y2≤105
+
+Subtasks
+
+Subtask #1 (100 points): original constraints
+Sample Input 1
+
+3
+2 4 5 1
+5 5 5 3
+1 4 3 3
+
+Sample Output 1
+
+3
+2
+2
+
+Explanation
+
+    In the first case, the distance between (2,4)
+
+and (5,1) is max(|2−5|,|4−1|)=max(|−3|,|3|)=3
+
+.
+
+In the second case, the distance between (5,5)
+and (5,3) is max(|5−5|,|5−3|)=max(|0|,|2|)=2
+
+.
+
+In the third case, the distance between (1,4)
+and (3,3) is max(|1−3|,|4−3|)=max(|−2|,|1|)=2.
+
+
+
+
+////////////////////////////////////////////////////////////////////////// code ////////////////////////////////////////////////////////////////////////////////////////
+
+
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    int main()
+    {
+      long long int n,x1,x2,y1,y2,i,p,q,r;
+      cin>>n;
+      for(i=1;i<=n;i++)
+      {
+         cin>>x1>>y1>>x2>>y2;
+
+         p = abs(x1 - x2);
+         q = abs(y1 - y2);
+
+         r = max(p,q);
+
+         cout<<r<<endl;
+      }
+
+       return 0;
+    }
+
+
+
+
+
+
+                                                                                      C)Good Program
+
+
+
+
+
+n computing, the collection of four bits is called a nibble.
+
+Chef defines a program as:
+
+    Good, if it takes exactly X
+
+nibbles of memory, where X
+
+    is a positive integer.
+    Not Good, otherwise.
+
+Given a program which takes N
+
+bits of memory, determine whether it is Good or Not Good.
+Input Format
+
+    First line will contain T
+
+, number of test cases. Then the test cases follow.
+The first and only line of each test case contains a single integer N
+
+    , the number of bits taken by the program.
+
+Output Format
+
+For each test case, output Good
+or Not Good in a single line. You may print each character of Good or Not Good in uppercase or lowercase (for example, GoOd, GOOD, good
+
+will be considered identical).
+Constraints
+
+    1≤T≤1000
+
+1≤N≤1000
+
+Subtasks
+
+Subtask #1 (100 points): original constraints
+Sample Input 1
+
+4
+8
+17
+52
+3
+
+Sample Output 1
+
+Good
+Not Good
+Good
+Not Good
+
+Explanation
+
+Test case 1: The program requires 8
+bits of memory. This is equivalent to 84=2 nibbles. Since 2
+
+is an integer, this program is good.
+
+Test case 2: The program requires 17
+bits of memory. This is equivalent to 174=4.25 nibbles. Since 4.25
+
+is not an integer, this program is not good.
+
+Test case 3: The program requires 52
+bits of memory. This is equivalent to 524=13 nibbles. Since 13
+
+is an integer, this program is good.
+
+Test case 4: The program requires 3
+bits of memory. This is equivalent to 34=0.75 nibbles. Since 0.75 is not an integer, this program is not good
+
+
+
+//////////////////////////////////////////////////////////////////////////// code ////////////////////////////////////////////////////////////////////////////////////////
+
+
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    int main()
+    {
+      long long int n,x,s,i;
+      cin>>n;
+      for(i=1;i<=n;i++)
+      {
+          cin>>x;
+          s = x%4;
+
+          if(s == 0)
+          cout<<"Good"<<endl;
+          else
+          cout<<"Not Good"<<endl;
+      }
+
+       return 0;
+    }
+
+
+                                                                             D)Watching Movies at 2x
+
+
+
+Chef started watching a movie that runs for a total of X
+
+minutes.
+
+Chef has decided to watch the first Y
+minutes of the movie at twice the usual speed as he was warned by his friends that the movie gets interesting only after the first Y
+
+minutes.
+
+How long will Chef spend watching the movie in total?
+
+Note: It is guaranteed that Y
+
+is even.
+Input Format
+
+    The first line contains two space separated integers X,Y
+
+    - as per the problem statement.
+
+Output Format
+
+    Print in a single line, an integer denoting the total number of minutes that Chef spends in watching the movie.
+
+Constraints
+
+    1≤X,Y≤1000
+
+Y
+
+    is an even integer.
+
+Subtasks
+
+Subtask #1 (100 points): original constraints
+Sample Input 1
+
+100 20
+
+Sample Output 1
+
+90
+
+Explanation
+
+For the first Y=20
+minutes, Chef watches at twice the usual speed, so the total amount of time spent to watch this portion of the movie is Y2=10
+
+minutes.
+
+For the remaining X−Y=80
+minutes, Chef watches at the usual speed, so it takes him 80
+
+minutes to watch the remaining portion of the movie.
+
+In total, Chef spends 10+80=90
+
+minutes watching the entire movie.
+Sample Input 2
+
+50 24
+
+Sample Output 2
+
+38
+
+Explanation
+
+For the first Y=24
+minutes, Chef watches at twice the usual speed, so the total amount of time spent to watch this portion of the movie is Y2=12
+
+minutes.
+
+For the remaining X−Y=26
+minutes, Chef watches at the usual speed, so it takes him 26
+
+minutes to watch the remaining portion of the movie.
+
+In total, Chef spends 12+26=38
+minutes watching the entire movie.
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////// code ///////////////////////////////////////////////////////////////////////////
+
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    int main()
+    {
+      long long int x,y,p,q,r;
+
+       cin>>x>>y;
+       p = y /2;
+       q = x - y;
+       r = p + q;
+
+       cout<<r<<endl;
+
+
+       return 0;
+    }
+
+
+
