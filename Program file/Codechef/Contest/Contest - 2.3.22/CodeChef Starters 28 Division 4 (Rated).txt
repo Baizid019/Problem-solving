@@ -1,0 +1,550 @@
+Contest 3/5/2022
+Attempted 5
+Accepted 5
+Wrong 0
+
+                                                                       A)Chef and Instant Noodles
+
+
+Chef and Instant Noodles Problem Code: INSTNOODLE
+Solved
+Submit (Practice)
+
+Chef has invented 1
+-minute Instant Noodles. As the name suggests, each packet takes exactly 1
+
+minute to cook.
+
+Chef's restaurant has X
+stoves and only 1
+
+packet can be cooked in a single pan.
+
+How many customers can Chef serve in Y
+minutes if each customer orders exactly 1
+
+packet of noodles?
+Input Format
+
+    The first and only line of input contains two space-separated integers X
+
+and Y
+
+    — the number of stoves and the number of minutes, respectively.
+
+Output Format
+
+    Print a single integer, the maximum number of customers Chef can serve in Y
+
+    minutes
+
+Constraints
+
+    1≤X,Y≤1000
+
+Sample Input 1
+
+3 7
+
+Sample Output 1
+
+21
+
+Explanation
+
+Chef cooks for Y=7
+minutes and can cook X=3
+
+packets per minute, one on each stove.
+
+So, the total number of packets that can be cooked is X⋅Y=3⋅7=21
+
+.
+
+Each person orders one packet, so the maximum number of customers that can be served is 21
+
+.
+Sample Input 2
+
+7 8
+
+Sample Output 2
+
+56
+
+Explanation
+
+Chef cooks for Y=8
+minutes and can cook X=7
+
+packets per minute, one on each stove.
+
+So, the total number of packets that can be cooked is X⋅Y=7⋅8=56
+
+.
+
+Each person orders one packet, so the maximum number of customers that can be served is 56
+.
+
+
+///////////////////////////////////////////////////////// code /////////////////////////////////////////////////////////////
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+       long long int n,i,x,y,z;
+
+       cin>>x>>y;
+       z =  x*y;
+       cout<<z<<endl;
+
+
+return 0;
+}
+
+
+
+                                                                       B) Qualify the round
+
+
+
+n a coding contest, there are two types of problems:
+
+    Easy problems, which are worth 1
+
+point each
+Hard problems, which are worth 2
+
+    points each
+
+To qualify for the next round, a contestant must score at least X
+points. Chef solved A Easy problems and B
+
+Hard problems. Will Chef qualify or not?
+Input Format
+
+    The first line of input contains a single integer T
+
+, denoting the number of test cases. The description of T
+test cases follows.
+Each test case consists of a single line of input containing three space-separated integers — X,A
+, and B
+
+    .
+
+Output Format
+
+For each test case, output a new line containing the answer — Qualify if Chef qualifies for the next round, and NotQualify otherwise.
+
+Each character of the answer may be printed in either uppercase or lowercase. For example, if the answer is Qualify, outputs such as qualify, quALiFy, QUALIFY and QuAlIfY will also be accepted as correct.
+Constraints
+
+    1≤T≤100
+
+1≤X≤100
+0≤A,B≤100
+
+Sample Input 1
+
+3
+15 9 3
+5 3 0
+6 2 8
+
+Sample Output 1
+
+Qualify
+NotQualify
+Qualify
+
+Explanation
+
+Test Case 1
+: Chef solved 9 easy problems and 3 hard problems, making his total score 9⋅1+3⋅2=15. He needs at least 15
+
+points to qualify, which he has and hence he qualifies.
+
+Test Case 2
+: Chef solved 3 easy problems and 0 hard problems, making his total score 3⋅1+0⋅2=3. He needs at least 5
+
+points to qualify, which he doesn't have and hence doesn't qualify.
+
+Test Case 3
+: Chef solved 2 easy problems and 8 hard problems, making his total score 2⋅1+8⋅2=18. He needs at least 6 points to qualify, which he has and hence he qualifies.
+
+
+/////////////////////////////////////////////////////////////// code ////////////////////////////////////////////////////
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+   long long int n,i,x,y,a,b;
+   cin>>n;
+   for(i=1;i<=n;i++)
+   {
+        cin>>x>>a>>b;
+        y = (a*1)+(b*2);
+        if(y>=x)
+        cout<<"Qualify"<<endl;
+        else
+        cout<<"NotQualify"<<endl;
+
+   }
+
+return 0;
+}
+
+
+ 
+                                                                             
+                                                                         C) Self Defence Training
+
+
+
+Self Defence Training Problem Code: SELFDEF
+Solved
+Submit (Practice)
+
+After the phenomenal success of the 36th Chamber of Shaolin, San Te has decided to start 37th Chamber of Shaolin. The aim this time is to equip women with shaolin self-defence techniques.
+
+The only condition for a woman to be eligible for the special training is that she must be between 10
+and 60 years of age, inclusive of both 10 and 60
+
+.
+
+Given the ages of N
+
+women in his village, please help San Te find out how many of them are eligible for the special training.
+Input Format
+
+    The first line of input contains a single integer T
+
+, denoting the number of test cases. The description of T
+test cases follows.
+The first line of each test case contains a single integer N
+, the number of women.
+The second line of each test case contains N
+space-separated integers A1,A2,...,AN
+
+    , the ages of the women.
+
+Output Format
+
+For each test case, output in a single line the number of women eligible for self-defence training.
+Constraints
+
+    1≤T≤20
+
+1≤N≤100
+1≤Ai≤100
+
+Sample Input 1
+
+3
+3
+15 23 65
+3
+15 62 16
+2
+35 9
+
+Sample Output 1
+
+2
+2
+1
+
+Explanation
+
+Test Case 1
+: Out of the women, only the 1st and 2nd women are eligible for the training because their ages lie in the interval [10,60]
+
+. Hence the answer is 2.
+
+Test Case 2
+: Only the 1st and 3rd women are eligible for the training because their ages lie in the interval [10,60]
+
+. Hence the answer is again 2.
+
+Test Case 3
+: Only the 1st woman with age 35 is eligible for the training. Hence the answer is 1.
+
+
+
+
+/////////////////////////////////////////////////////////////////////// code /////////////////////////////////////////////////
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+   long long int n,i,j,num,x,count = 0;
+   cin>>n;
+   for(i=1;i<=n;i++)
+   {
+        cin>>num;
+        for(j=1;j<=num;j++)
+      {
+         cin>>x;
+         if(x>=10 && x<=60)
+         {
+             count++;
+         }
+      }
+      cout<<count<<endl;
+      count = 0;
+   }
+
+return 0;
+}
+
+
+
+
+
+
+                                                                     D)Car Choice
+
+
+
+Chef is planning to buy a new car for his birthday. After a long search, he is left with 2
+
+choices:
+
+    Car 1: Runs on diesel with a fuel economy of x1
+
+km/l
+Car 2: Runs on petrol with a fuel economy of x2
+
+    km/l
+
+Chef also knows that
+
+    the current price of diesel is y1
+
+rupees per litre
+the current price of petrol is y2
+
+    rupees per litre
+
+Assuming that both cars cost the same and that the price of fuel remains constant, which car will minimize Chef's expenses?
+
+Print your answer as a single integer in the following format
+
+    If it is better to choose Car 1, print −1
+
+If both the cars will result in the same expenses, print 0
+If it is better to choose Car 2, print 1
+
+Input Format
+
+    The first line of input contains a single integer T
+
+, denoting the number of test cases. The description of T
+test cases follows.
+Each test case consists of a single line containing 4
+space-separated integers — x1,x2,y1,y2
+
+    .
+
+Output Format
+
+For each test case, output in a single line the answer as explained earlier.
+Constraints
+
+    1≤T≤10000
+
+1≤x1,x2,y1,y2≤50
+
+Sample Input 1
+
+3
+10 5 3 20
+7 2 7 2
+1 5 3 2
+
+Sample Output 1
+
+-1
+0
+1
+
+Explanation
+
+Test Case 1
+: The cost of driving Car 1 is 310=0.3 rs/km, and the cost of driving Car 2 is 205=4 rs/km. Therefore, Car 1 is cheaper to drive, so the output is −1
+
+.
+
+Test Case 2
+: The cost of driving Car 1 is 1 rs/km, and the cost of driving Car 2 is also 1 rs/km. Both cars offer the same economy, so the output is 0
+
+.
+
+Test Case 3
+: The cost of driving Car 1 is 3 rs/km and the cost of driving Car 2 is 0.4 rs/km. Therefore, Car 2 is cheaper to drive, so the output is 1.
+
+
+
+
+//////////////////////////////////////////////////////////////// code ///////////////////////////////////////////////
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+   long long int n,i,x1,x2,y1,y2;
+   double c1,c2,p,q,r,s;
+   cin>>n;
+   for(i=1;i<=n;i++)
+   {
+       cin>>x1>>x2>>y1>>y2;
+
+       p = x1;
+       q = y1;
+       r = x2;
+       s = y2;
+
+       c1 =  q/p;
+       c2 =  s/r;
+
+        if(c1<c2)
+        cout<<"-1"<<endl;
+        else if(c1>c2)
+        cout<<"1"<<endl;
+        else
+        cout<<"0"<<endl;
+   }
+
+return 0;
+}
+
+
+
+                                                                       E)Count the Holidays
+
+
+
+
+Count the Holidays Problem Code: SUNDAY
+Solved
+Submit (Practice)
+
+A particular month has 30
+days, numbered from 1 to 30
+
+.
+
+Day 1
+is a Monday, and the usual 7-day week is followed (so day 2 is Tuesday, day 3
+
+is Wednesday, and so on).
+
+Every Saturday and Sunday is a holiday. There are N
+
+festival days, which are also holidays. Note that it is possible for a festival day to occur on a Saturday or Sunday.
+
+You are given the dates of the festivals. Determine the total number of holidays in this month.
+Input Format
+
+    The first line of input contains a single integer T
+
+, denoting the number of test cases. The description of T
+test cases follows.
+The first line of each test case contains an integer N
+denoting the number of festival days.
+The second line of each test case contains N
+distinct space-separated integers A1,A2,…AN, denoting the festival days. Note that the Ai
+
+    are not necessarily given in sorted order.
+
+Output Format
+
+For each test case, output a new line containing the total number of holidays.
+Constraints
+
+    1≤T≤1000
+
+1≤N≤30
+1≤Ai≤30
+All the Ai
+
+    are distinct
+
+Sample Input 1
+
+3
+2
+5 7
+3
+23 1 6
+1
+13
+
+Sample Output 1
+
+9
+10
+8
+
+Explanation
+
+Test Case 1
+: Days 6,13,20 and 27 are Saturdays, and days 7,14,21,28 are Sundays. The festivals fall on day 5 and day 7, but day 7 is already a Sunday. This gives us 9 holidays in total — days 5,6,7,13,14,20,21,27,28
+
+.
+
+Test Case 2
+: Days 6,13,20 and 27 are Saturdays, and days 7,14,21,28 are Sundays. The festivals fall on day 1, day 6, and day 23. This gives us 10 holidays in total — days 1,6,7,13,14,20,21,23,27,28
+
+.
+
+Test Case 3
+: Days 6,13,20 and 27 are Saturdays, and days 7,14,21,28 are Sundays. The only festival is on day 13, which is already a holiday. This gives us 8 holidays in total — days 6,7,13,14,20,21,27,28.
+
+
+
+//////////////////////////////////////////////////////////////////// code /////////////////////////////////////////////
+
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+   long long int n,i,j,num,x,count = 0;
+   cin>>n;
+   for(i=1;i<=n;i++)
+   {
+        cin>>num;
+        for(j=1;j<=num;j++)
+      {
+         cin>>x;
+         if(x!=6 && x!= 13 &&  x!= 20 && x!= 27 &&  x!= 7 &&  x!= 14 && x!= 21 &&  x!= 28)
+         {
+             count++;
+         }
+      }
+      cout<<count+8<<endl;
+      count = 0;
+   }
+
+return 0;
+}
+
+
+
