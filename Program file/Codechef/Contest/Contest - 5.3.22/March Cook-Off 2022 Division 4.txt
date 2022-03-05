@@ -1,0 +1,345 @@
+Contest - 3/5/2022
+Attempted - 4
+Accepted - 4
+
+
+
+
+                                                              A)Janmansh and Assignments
+
+
+
+
+Janmansh has to submit 3 assignments for Chingari before 10 pm and he starts to do the assignments at X pm. Each assignment takes him 1
+
+hour to complete. Can you tell whether he'll be able to complete all assignments on time or not?
+Input Format
+
+    The first line will contain T
+
+- the number of test cases. Then the test cases follow.
+The first and only line of each test case contains one integer X
+
+    - the time when Janmansh starts doing the assignemnts.
+
+Output Format
+
+For each test case, output Yes if he can complete the assignments on time. Otherwise, output No.
+
+You may print each character of Yes and No in uppercase or lowercase (for example, yes, yEs, YES will be considered identical).
+Constraints
+
+    1≤T≤10
+
+1≤X≤9
+
+Sample Input 1
+
+2
+7
+9
+
+Sample Output 1
+
+Yes
+No
+
+Explanation
+
+Test case-1: He can start at 7
+pm and finish by 10
+
+pm. Therefore he can complete the assignments.
+
+Test case-2: He can not complete all the 3
+assignments if he starts at 9 pm.
+
+
+////////////////////////////// code//////////////////////////
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+   long long int x,i,t;
+   cin>>t;
+   for(i=1;i<=t;i++)
+   {
+       cin>>x;
+       if(x>=8 && x<=9)
+       cout<<"No"<<endl;
+       else
+        cout<<"Yes"<<endl;
+   }
+    return 0;
+}
+
+
+
+                                                                    B) Janmansh and Coins
+
+
+
+Janmansh received X coins of 10 rupees and Y coins of 5
+
+rupees from Chingari. Since he is weak in math, can you find out how much total money does he have?
+Input Format
+
+    The first line will contain T
+
+- the number of test cases. Then the test cases follow.
+The first and only line of each test case contains two integers X
+, Y - the number of 10 and 5
+
+    rupee coins respectively.
+
+Output Format
+
+For each test case, output how much total money does Janmansh have.
+Constraints
+
+    1≤T≤100
+
+0≤X,Y≤100
+
+Sample Input 1
+
+2
+2 1
+3 4
+
+Sample Output 1
+
+25
+50
+
+Explanation
+
+Test case-1: He has 2
+coins of 10 rupees and 1 coin of 5 rupees. Hence he has 2⋅10+5=25
+
+rupees.
+
+Test case-2: He has 3
+coins of 10 rupees and 4 coins of 5 rupees. Hence he has 3⋅10+4⋅5=50 rupees
+
+
+
+////////////////////////////////////////////////////////// code ////////////////////////////////////////
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+   long long int x,y,i,t,s;
+   cin>>t;
+   for(i=1;i<=t;i++)
+   {
+       cin>>x>>y;
+       s = (x*10) + (y*5);
+       cout<<s<<endl;
+
+   }
+    return 0;
+}
+
+
+
+
+
+                                                                C) Janmansh and Games
+
+
+
+Janmansh and Jay are playing a game. They start with a number X and they play a total of Y
+
+moves. Janmansh plays the first move of the game, after which both the players make moves alternatingly.
+
+In one move, a player can increment or decrement X
+by 1
+
+.
+
+If the final number after performing Y
+
+moves is even, then Janmansh wins otherwise, Jay wins. Determine the winner of the game if both the players play optimally.
+Input Format
+
+    The first line will contain T
+
+- the number of test cases. Then the test cases follow.
+The first and only line of each test case contains two integers X
+, Y
+
+    - the starting number and the total number of moves respectively.
+
+Output Format
+
+For each test case, output the winning player (Janmansh or Jay).
+
+You may print each character of Janmansh and Jay in uppercase or lowercase (for example, JAY, jaY, JAy will be considered identical).
+Constraints
+
+    1≤T≤100
+
+1≤X,Y≤100
+
+Sample Input 1
+
+2
+2 2
+4 3
+
+Sample Output 1
+
+Janmansh
+Jay
+
+Explanation
+
+Test case-1: The starting number is X=2
+
+. One of the optimal games will be:
+
+    In the first move, Janmansh increases X
+
+to 3
+.
+In the second move, Jay increases X
+to 4
+
+    .
+
+Since the final number is even, Janmansh wins.
+
+Test case-2: The starting number is X=4
+
+. One of the optimal games will be:
+
+    In the first move, Janmansh decreases X
+
+to 3
+.
+In the second move, Jay decreases X
+to 2
+.
+In the third move, Janmansh increases X
+to 3
+
+    .
+
+Since the final number is odd, Jay wins.
+
+
+
+
+/////////////////////////////////////////////// code /////////////////////////////////////////////
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+   long long int x,y,i,t,s;
+   cin>>t;
+   for(i=1;i<=t;i++)
+   {
+       cin>>x>>y;
+       s = (x+1) + (y+1);
+       if(s%2==0)
+       cout<<"Janmansh"<<endl;
+       else
+       cout<<"Jay"<<endl;
+   }
+    return 0;
+}
+
+
+                                                               D) Janmansh at Fruit Market 
+
+
+Janmansh is at the fruit market to buy fruits for Chingari. There is an infinite supply of three different kinds of fruits with prices A, B and C
+
+.
+
+He needs to buy a total of X
+fruits having at least 2
+
+different kinds of fruits. What is the least amount of money he can spend to buy fruits?
+Input Format
+
+    The first line of the input contains a single integer T
+
+- the number of test cases. The description of T
+test cases follows.
+The first and only line of each test case contains four space separated integers X
+, A, B, C
+
+    - the number of fruits to buy and the prices of the three different types of fruits respectively.
+
+Output Format
+
+For each test case, output the least amount of money he can spend to buy fruits.
+Constraints
+
+    1≤T≤105
+
+2≤X≤1000
+1≤A,B,C≤100
+
+Sample Input 1
+
+2
+2 1 1 1
+3 4 3 2
+
+Sample Output 1
+
+2
+7
+
+Explanation
+
+Test case-1: He can buy any two fruits of different kinds for a total price of 2
+
+.
+
+Test case-2: He can buy 1
+fruit of price 3 and 2 fruits of price 2 for a total price of 7
+
+
+
+
+
+////////////////////////////////////////////////// code ////////////////////////////////////////
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+   long long int x,a,b,c,i,p,q,s,t,r;
+   cin>>t;
+   for(i=1;i<=t;i++)
+   {
+       cin>>x>>a>>b>>c;
+
+       p = max(a,max(b,c));
+
+       q = min(a,min(b,c));
+
+       r = abs(p+q-a-b-c);
+
+       s = (x-2) * q;
+
+       if(x==2)
+       cout<<q+r<<endl;
+       else if(x>2)
+       cout<<q+r+s<<endl;
+   }
+    return 0;
+}
+
+
